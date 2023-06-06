@@ -1,0 +1,21 @@
+.login-bg {
+    background: url('https://w0.peakpx.com/wallpaper/335/544/HD-wallpaper-elegant-black-929-abstract-dark-minimal-simple-sleek-theme.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 90vh;
+    opacity: 1;
+    z-index: 20;
+}
+
+.login-cart {
+    background: url('https://w0.peakpx.com/wallpaper/335/544/HD-wallpaper-elegant-black-929-abstract-dark-minimal-simple-sleek-theme.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    /* width: 100%;
+    height: 90vh; */
+    opacity: 1;
+    z-index: 20;
+}
