@@ -1,0 +1,74 @@
+[
+    {
+      "image": "https://crown-art.ancorathemes.com/wp-content/uploads/2017/03/image-21-770x334.jpg",
+      "name": "Class A",
+      "instructor": "John Doe",
+      "availableSeats": 20,
+      "totalSeats": 25,
+      "price": 50,
+      "enrolledSeats": 5
+    },
+    {
+      "image": "https://crown-art.ancorathemes.com/wp-content/uploads/2017/03/image-21-770x334.jpg",
+      "name": "Class B",
+      "instructor": "Jane Smith",
+      "availableSeats": 22,
+      "totalSeats": 25,
+      "price": 40,
+      "enrolledSeats": 3
+    },
+    {
+      "image": "https://crown-art.ancorathemes.com/wp-content/uploads/2017/03/image-21-770x334.jpg",
+      "name": "Class C",
+      "instructor": "David Johnson",
+      "availableSeats": 18,
+      "totalSeats": 25,
+      "price": 30,
+      "enrolledSeats": 7
+    },
+    {
+      "image": "https://crown-art.ancorathemes.com/wp-content/uploads/2017/03/image-21-770x334.jpg",
+      "name": "Class D",
+      "instructor": "Sarah Williams",
+      "availableSeats": 25,
+      "totalSeats": 25,
+      "price": 60,
+      "enrolledSeats": 0
+    },
+    {
+      "image": "https://crown-art.ancorathemes.com/wp-content/uploads/2017/03/image-21-770x334.jpg",
+      "name": "Class E",
+      "instructor": "Michael Brown",
+      "availableSeats": 15,
+      "totalSeats": 25,
+      "price": 45,
+      "enrolledSeats": 10
+    },
+    {
+      "image": "https://crown-art.ancorathemes.com/wp-content/uploads/2017/03/image-21-770x334.jpg",
+      "name": "Class F",
+      "instructor": "Emily Davis",
+      "availableSeats": 10,
+      "totalSeats": 25,
+      "price": 25,
+      "enrolledSeats": 15
+    },
+    {
+      "image": "https://crown-art.ancorathemes.com/wp-content/uploads/2017/03/image-21-770x334.jpg",
+      "name": "Class G",
+      "instructor": "Daniel Wilson",
+      "availableSeats": 24,
+      "totalSeats": 25,
+      "price": 35,
+      "enrolledSeats": 1
+    },
+    {
+      "image": "https://crown-art.ancorathemes.com/wp-content/uploads/2017/03/image-21-770x334.jpg",
+      "name": "Class H",
+      "instructor": "Olivia Thompson",
+      "availableSeats": 0,
+      "totalSeats": 25,
+      "price": 55,
+      "enrolledSeats": 25
+    }
+  ]

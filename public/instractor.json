@@ -1,0 +1,42 @@
+[
+    {
+      "image": "https://www.shutterstock.com/image-vector/standing-business-man-teacher-wearing-260nw-510075547.jpg",
+      "name": "John Doe",
+      "email": "john.doe@example.com"
+    },
+    {
+      "image": "https://www.shutterstock.com/image-vector/standing-business-man-teacher-wearing-260nw-510075547.jpg",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com"
+    },
+    {
+      "image": "instructor3.jpg",
+      "name": "David Johnson",
+      "email": "david.johnson@example.com"
+    },
+    {
+      "image": "https://www.shutterstock.com/image-vector/standing-business-man-teacher-wearing-260nw-510075547.jpg",
+      "name": "Sarah Davis",
+      "email": "sarah.davis@example.com"
+    },
+    {
+      "image": "https://www.shutterstock.com/image-vector/standing-business-man-teacher-wearing-260nw-510075547.jpg",
+      "name": "Michael Wilson",
+      "email": "michael.wilson@example.com"
+    },
+    {
+      "image": "https://www.shutterstock.com/image-vector/standing-business-man-teacher-wearing-260nw-510075547.jpg",
+      "name": "Emily Taylor",
+      "email": "emily.taylor@example.com"
+    },
+    {
+      "image": "https://www.shutterstock.com/image-vector/standing-business-man-teacher-wearing-260nw-510075547.jpg",
+      "name": "Daniel Brown",
+      "email": "daniel.brown@example.com"
+    },
+    {
+      "image": "https://www.shutterstock.com/image-vector/standing-business-man-teacher-wearing-260nw-510075547.jpg",
+      "name": "Olivia Thompson",
+      "email": "olivia.thompson@example.com"
+    }
+  ]
