@@ -11,8 +11,7 @@ const useInstructorAddClasses = email =>{
         queryFn: async ()=>{
             const response = await fetch(`http://localhost:5000/classes/${user?.email}`,{
                 headers: {
-                  'Content-Type': 'application/json', // Adjust the content type based on your backend requirements
-                  // Add any other headers that your backend expects
+                  'Content-Type': 'application/json',
                 },
               })
             return response.json()

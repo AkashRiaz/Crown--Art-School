@@ -1,9 +1,10 @@
 import React from 'react';
 
 const MyEnrolledClass = () => {
+    
     return (
         <div>
-            <h2>My Enrolled Class</h2>
+            <h2>My Enrolled Class:</h2>
         </div>
     );
 };
