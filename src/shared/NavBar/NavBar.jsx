@@ -3,7 +3,14 @@ import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
 
 const NavBar = () => {
-  const {user} = useContext(AuthContext)
+  const {user,logOut} = useContext(AuthContext)
+  const handleLogOut =()=>{
+    logOut()
+    .then(()=>{})
+    .catch(error =>{
+      console.log(error.message)
+    })
+  }
     const navMenu = (
         <div className="md:flex md:space-x-5">
           <li>
