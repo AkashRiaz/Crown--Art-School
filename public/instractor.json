@@ -1,42 +1,50 @@
 [
-    {
+  {
       "image": "https://www.shutterstock.com/image-vector/standing-business-man-teacher-wearing-260nw-510075547.jpg",
       "name": "John Doe",
-      "email": "john.doe@example.com"
-    },
-    {
+      "email": "john.doe@example.com",
+      "number_of_students": 20
+  },
+  {
       "image": "https://www.shutterstock.com/image-vector/standing-business-man-teacher-wearing-260nw-510075547.jpg",
       "name": "Jane Smith",
-      "email": "jane.smith@example.com"
-    },
-    {
+      "email": "jane.smith@example.com",
+      "number_of_students": 15
+  },
+  {
       "image": "instructor3.jpg",
       "name": "David Johnson",
-      "email": "david.johnson@example.com"
-    },
-    {
+      "email": "david.johnson@example.com",
+      "number_of_students": 10
+  },
+  {
       "image": "https://www.shutterstock.com/image-vector/standing-business-man-teacher-wearing-260nw-510075547.jpg",
       "name": "Sarah Davis",
-      "email": "sarah.davis@example.com"
-    },
-    {
+      "email": "sarah.davis@example.com",
+      "number_of_students": 23
+  },
+  {
       "image": "https://www.shutterstock.com/image-vector/standing-business-man-teacher-wearing-260nw-510075547.jpg",
       "name": "Michael Wilson",
-      "email": "michael.wilson@example.com"
-    },
-    {
+      "email": "michael.wilson@example.com",
+      "number_of_students": 28
+  },
+  {
       "image": "https://www.shutterstock.com/image-vector/standing-business-man-teacher-wearing-260nw-510075547.jpg",
       "name": "Emily Taylor",
-      "email": "emily.taylor@example.com"
-    },
-    {
+      "email": "emily.taylor@example.com",
+      "number_of_students": 12
+  },
+  {
       "image": "https://www.shutterstock.com/image-vector/standing-business-man-teacher-wearing-260nw-510075547.jpg",
       "name": "Daniel Brown",
-      "email": "daniel.brown@example.com"
-    },
-    {
+      "email": "daniel.brown@example.com",
+      "number_of_students": 19
+  },
+  {
       "image": "https://www.shutterstock.com/image-vector/standing-business-man-teacher-wearing-260nw-510075547.jpg",
       "name": "Olivia Thompson",
-      "email": "olivia.thompson@example.com"
-    }
-  ]
+      "email": "olivia.thompson@example.com",
+      "number_of_students": 17
+  }
+]

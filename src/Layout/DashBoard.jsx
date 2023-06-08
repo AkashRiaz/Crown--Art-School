@@ -5,7 +5,7 @@ const DashBoard = () => {
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center">
+      <div className="drawer-content mx-auto">
         {/* Page content here */}
         <Outlet></Outlet>
         <label
@@ -20,11 +20,24 @@ const DashBoard = () => {
         <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
           {/* Sidebar content here */}
           <li>
+            <Link to='/dashboard/manageClasses'>Manage Classes</Link>
+          </li>
+          <li>
             <Link to='/dashboard/manageUsers'>Manage Users</Link>
           </li>
           <li>
-            <a>Sidebar Item 2</a>
+            <Link to='addaclass'>Add A Class</Link>
           </li>
+          <li>
+            <Link to='myclass'>My Class</Link>
+          </li>
+          <li>
+            <Link to='myenrolledclass'>My Enrolled Class</Link>
+          </li>
+          <li>
+            <Link to='selectedclass'>My Selected Class</Link>
+          </li>
+          
         </ul>
       </div>
     </div>

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProviders';
 
 const SignUp = () => {
+  const {createUser} = useContext(AuthContext)
     const { register, handleSubmit,reset, watch, formState: { errors } } = useForm()
     const onSubmit =(data)=>{
         console.log(data)
@@ -13,6 +15,14 @@ const SignUp = () => {
           alert('Password and Confirm Password must match!');
           return;
         }
+        createUser(data.email, data.password)
+        .then(result =>{
+          const user = result.user;
+          console.log(user)
+        })
+        .catch(error =>{
+          console.log(error.message)
+        })
     }
     return (
         <div>

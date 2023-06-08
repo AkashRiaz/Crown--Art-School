@@ -12,6 +12,10 @@ import AllClasses from "../pages/AllClasses/AllClasses";
 import DashBoard from "../Layout/DashBoard";
 import ManageClasses from "../pages/Dashboard/Admin/ManageClasses/ManageClasses";
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
+import AddAClass from "../pages/Dashboard/Instructor/AddAClass/AddAClass";
+import MyClass from "../pages/Dashboard/Instructor/MyClass/MyClass";
+import MyEnrolledClass from "../pages/Dashboard/Student/MyEnrolledClass/MyEnrolledClass";
+import MySelectedClass from "../pages/Dashboard/Student/MySelectedClass/MySelectedClass";
 
   const router = createBrowserRouter([
     {
@@ -52,6 +56,22 @@ import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
         {
           path:'manageUsers',
           element:<ManageUsers></ManageUsers>
+        },
+        {
+          path:'addaclass',
+          element:<AddAClass></AddAClass>
+        },
+        {
+          path:'myclass',
+          element:<MyClass></MyClass>
+        },
+        {
+          path:'myenrolledclass',
+          element:<MyEnrolledClass></MyEnrolledClass>
+        },
+        {
+          path:'selectedclass',
+          element:<MySelectedClass></MySelectedClass>
         }
       ]
     }
