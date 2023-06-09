@@ -16,6 +16,8 @@ import AddAClass from "../pages/Dashboard/Instructor/AddAClass/AddAClass";
 import MyClass from "../pages/Dashboard/Instructor/MyClass/MyClass";
 import MyEnrolledClass from "../pages/Dashboard/Student/MyEnrolledClass/MyEnrolledClass";
 import MySelectedClass from "../pages/Dashboard/Student/MySelectedClass/MySelectedClass";
+import Payments from "../pages/Dashboard/Student/Payments/Payments";
+import PrivateRoutes from "./PrivateRoute";
 
   const router = createBrowserRouter([
     {
@@ -47,7 +49,7 @@ import MySelectedClass from "../pages/Dashboard/Student/MySelectedClass/MySelect
     },
     {
       path:'dashboard',
-      element:<DashBoard></DashBoard>,
+      element:<PrivateRoutes><DashBoard></DashBoard></PrivateRoutes>,
       children:[
         {
           path:'manageClasses',
@@ -72,6 +74,10 @@ import MySelectedClass from "../pages/Dashboard/Student/MySelectedClass/MySelect
         {
           path:'selectedclass',
           element:<MySelectedClass></MySelectedClass>
+        },
+        {
+          path:'payment',
+          element:<Payments></Payments>
         }
       ]
     }

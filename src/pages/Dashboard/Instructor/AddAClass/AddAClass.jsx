@@ -10,8 +10,9 @@ const AddAClass = () => {
     const className = form.className.value;
     const instructorName = form.instructorName.value;
     const email = form.email.value;
-    const price = form.price.value;
+    const strPrice = form.price.value;
     const availableSeats = form.availableSeats.value;
+    const price = parseFloat(strPrice)
     const classInfo = {
       photo,
       className,

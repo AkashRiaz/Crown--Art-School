@@ -19,7 +19,7 @@ const AllClasses = () => {
       return;
     }
     else if(user){
-      const savedSelectedClass ={classId:singleClass._id,name:singleClass.name,studentEmail:user?.email,userName:user?.displayName}
+      const savedSelectedClass ={classId:singleClass._id,name:singleClass.name,studentEmail:user?.email,userName:user?.displayName, price: singleClass.price}
       fetch('http://localhost:5000/selectedClass',{
         method:'POST',
         headers:{
