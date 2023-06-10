@@ -6,13 +6,40 @@ const ManageUsers = () => {
     const res = await fetch("http://localhost:5000/users");
     return res.json();
   });
+
+  const handleMakeAdmin = (id) => {
+    fetch(`http://localhost:5000/users/admin/${id}`, {
+      method: "PATCH"
+    })
+      .then((res) => res.json)
+      .then((data) => {
+        if (data.modifiedCount) {
+          console.log(modifiedCount);
+          alert("Admin");
+        }
+        refetch();
+      });
+  };
+
+  const handleMakeInstructor = (id) => {
+    fetch(`http://localhost:5000/users/instructors/${id}`, {
+      method: "PATCH"
+    })
+      .then((res) => res.json)
+      .then((data) => {
+        if (data.modifiedCount) {
+          console.log(modifiedCount);
+        }
+        refetch();
+      });
+  };
+
   return (
     <div>
-      <h2>MAnage Users:{users.length}</h2>
+      <h2>Manage Users: {users.length}</h2>
       <div>
         <div className="overflow-x-auto">
           <table className="table">
-            {/* head */}
             <thead>
               <tr>
                 <th>
@@ -27,34 +54,41 @@ const ManageUsers = () => {
               </tr>
             </thead>
             <tbody>
-            {users.map((user, ind) => (
-             <tr key={user._id}>
-             <th>
-               {ind+ 1}
-             </th>
-             <th>
-             <div className="avatar">
-             <div className="mask mask-squircle w-12 h-12">
-               <img src={user.photo} alt="Avatar Tailwind CSS Component" />
-             </div>
-           </div>
-             </th>
-             <td>
-               {user.name}
-             </td>
-             <td>{user.email}</td>
-             <th>
-              <div>{
-                user.role=='admin'? 'admin': <button className="btn btn-ghost btn-xs bg-orange-800 text-white">Make Admin</button>
-                }</div>
-              <div className="mt-2">
-              {
-                user.role =="instructor"? 'instructor':<button className="btn btn-ghost btn-xs bg-orange-600 text-white">Make Instructor</button>
-              }
-              </div>
-             </th>
-           </tr>
-            ))}
+              {users.map((user, ind) => (
+                <tr key={user._id}>
+                  <th>{ind + 1}</th>
+                  <th>
+                    <div className="avatar">
+                      <div className="mask mask-squircle w-12 h-12">
+                        <img src={user.photo} alt="Avatar Tailwind CSS Component" />
+                      </div>
+                    </div>
+                  </th>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>{user.role}</td>
+                  <th>
+                    <div>
+                      <button
+                        className="btn btn-ghost btn-xs bg-orange-800 text-white"
+                        onClick={() => handleMakeAdmin(user._id)}
+                        disabled={user.role === "admin" || user.role === "instructors"}
+                      >
+                        Make Admin
+                      </button>
+                    </div>
+                    <div className="mt-2">
+                      <button
+                        onClick={() => handleMakeInstructor(user._id)}
+                        className="btn btn-ghost btn-xs bg-orange-600 text-white"
+                        disabled={user.role === "admin" || user.role === "instructors"}
+                      >
+                        Make Instructor
+                      </button>
+                    </div>
+                  </th>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
