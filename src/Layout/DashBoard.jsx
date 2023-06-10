@@ -1,8 +1,10 @@
 import React from "react";
 import {Outlet,Link} from 'react-router-dom'
+import useAdmin from "../hooks/useAdmin";
 
 const DashBoard = () => {
-  const isAdmin = false;
+  // const isAdmin = true;
+  const [isAdmin] = useAdmin()
   const isInstructors = false;
   return (
     <div className="drawer lg:drawer-open">

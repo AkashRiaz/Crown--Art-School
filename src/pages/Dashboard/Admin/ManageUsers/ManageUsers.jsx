@@ -66,7 +66,7 @@ const ManageUsers = () => {
                   </th>
                   <td>{user.name}</td>
                   <td>{user.email}</td>
-                  <td>{user.role}</td>
+                  <td>{user.role || "user"}</td>
                   <th>
                     <div>
                       <button
