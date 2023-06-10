@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
+import SocialLogin from '../../shared/SocialLogin/SocialLogin';
 
 const SignUp = () => {
+  const navigate = useNavigate()
   const {createUser,userUpdateProfile} = useContext(AuthContext)
+ 
     const { register, handleSubmit,reset, watch, formState: { errors } } = useForm()
     const onSubmit =(data)=>{
         console.log(data)
@@ -20,8 +23,24 @@ const SignUp = () => {
           const user = result.user;
           userUpdateProfile(data.name, data.photoURL)
           .then(currentUser =>{
-            const updateUser = currentUser.user;
-            console.log(updateUser)
+            const saveUser ={name:data.name, email:data.email}
+            fetch('http://localhost:5000/users',{
+              method:'POST',
+              headers:{
+                'content-type':'application/json'
+              },
+              body:JSON.stringify(saveUser)
+            })
+            .then(res=>res.json())
+            .then(data =>{
+              if(data.insertedId){
+                reset()
+                const updateUser = currentUser.user;
+                console.log(updateUser)
+              }
+            })
+            
+            
           })
           .catch(error =>{
             console.log(error.message)
@@ -31,6 +50,7 @@ const SignUp = () => {
         .catch(error =>{
           console.log(error.message)
         })
+        navigate('/')
     }
     return (
         <div>
@@ -123,6 +143,7 @@ const SignUp = () => {
               <div className="text-center mb-5">
                 <small>Already have an account ? <Link to='/login' className="text-orange-600 link-hover">Please login</Link></small>
               </div>
+              <SocialLogin></SocialLogin>
             </div>
           </div>
         </div>

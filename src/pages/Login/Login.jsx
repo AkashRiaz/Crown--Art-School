@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from "../../providers/AuthProviders";
 import { AiFillEyeInvisible } from 'react-icons/ai';
 import { AiFillEye } from 'react-icons/ai';
+import SocialLogin from "../../shared/SocialLogin/SocialLogin";
 
 const Login = () => {
   const {signIn} = useContext(AuthContext)
@@ -80,6 +81,7 @@ const Login = () => {
           <div className="text-center mb-5">
             <small>New to this website ? <Link to='/signup' className="text-orange-600 link-hover">Sign Up</Link></small>
           </div>
+          <SocialLogin></SocialLogin>
         </div>
       </div>
     </div>

@@ -1,95 +1,132 @@
-import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import './HeroSlider.css'
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Parallax, Pagination, Navigation } from "swiper";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const HeroSlider = () => {
-    return (
-        <>
-        <Swiper
-          speed={600}
-          parallax={true}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Parallax, Pagination, Navigation]}
-          className="mySwiper h-[400px] md:h-[600px] "
-        >
-          <div
-            slot="container-start"
-            className="parallax-bg"
-            data-swiper-parallax="-23%"
-          ></div>
-          <SwiperSlide className="px-20 relative object-cover bg-no-repeat bg-center " style={{
-            "background-image":
-              "url(https://cdn.pixabay.com/photo/2022/01/26/11/19/river-6968614_1280.png)",
-          }}>
-            <div className="flex justify-center">
-            <div className="absolute md:py-0 py-10 md:top-1/2 md:w-1/2 text-center bg-gradient-to-r from-gray-900 to-fuchsia-500 px-40 py-20">
-            <div className="title" data-swiper-parallax="-300">
-              Slide 1
-            </div>
-            <div className="subtitle" data-swiper-parallax="-200">
-              Subtitle
-            </div>
-            <div className="text" data-swiper-parallax="-100">
+  return (
+    <div>
+      <div className="carousel w-full h-[350px] md:h-[550px] mt-1">
+        <div id="item1" className="carousel-item w-full relative">
+          <img
+            src="https://images.unsplash.com/photo-1626278664285-f796b9ee7806?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+            className="w-full"
+          />
+          <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-start items-center  left-0 top-0 ">
+            <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 md:pl-24">
+              <h1 className="text-2xl md:text-5xl font-bold">
+                20% OFF, All Avengers Toy
+              </h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+              Get your favorite Avengers toys at discounted prices and bring the
+        action-packed adventures of Earth's mightiest heroes to your home.
               </p>
+
+              <div>
+                <Link to="/allToys" className="btn btn-primary mr-5">
+                  Shop Now
+                </Link>
+                <Link to="/addatoy" className="btn btn-outline btn-secondary">
+                  Sell Your Product
+                </Link>
+              </div>
             </div>
-            </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="title" data-swiper-parallax="-300">
-              Slide 2
-            </div>
-            <div className="subtitle" data-swiper-parallax="-200">
-              Subtitle
-            </div>
-            <div className="text" data-swiper-parallax="-100">
+          </div>
+        </div>
+        <div id="item2" className="carousel-item w-full relative">
+          <img
+            src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            className="w-full"
+          />
+          <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-start items-center  left-0 top-0 ">
+            <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 md:pl-24">
+              <h1 className="text-2xl md:text-5xl font-bold">
+                35% OFF, All Star Wars Toy
+              </h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+              Get your favorite Avengers toys at discounted prices and bring the
+        action-packed adventures of Earth's mightiest heroes to your home.
               </p>
+
+              <div>
+                <Link to="/allToys" className="btn btn-primary mr-5">
+                  Shop Now
+                </Link>
+                <Link to="/addatoy" className="btn btn-outline btn-secondary">
+                  Sell Your Product
+                </Link>
+              </div>
             </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="title" data-swiper-parallax="-300">
-              Slide 3
-            </div>
-            <div className="subtitle" data-swiper-parallax="-200">
-              Subtitle
-            </div>
-            <div className="text" data-swiper-parallax="-100">
+          </div>
+        </div>
+        <div id="item3" className="carousel-item w-full relative">
+          <img
+            src="https://images.unsplash.com/photo-1598348341635-33a3f4205d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80"
+            className="w-full"
+          />
+          <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-start items-center  left-0 top-0 ">
+            <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 md:pl-24">
+              <h1 className="text-2xl md:text-5xl font-bold">
+                23% OFF, All Transformers Toy
+              </h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-                Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-                Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+              Get your favorite Avengers toys at discounted prices and bring the
+        action-packed adventures of Earth's mightiest heroes to your home.
               </p>
+
+              <div>
+                <Link to="/allToys" className="btn btn-primary mr-5">
+                  Shop Now
+                </Link>
+                <Link to="/addatoy" className="btn btn-outline btn-secondary">
+                  Sell Your Product
+                </Link>
+              </div>
             </div>
-          </SwiperSlide>
-        </Swiper>
-        </>
-    );
+          </div>
+        </div>
+        <div id="item4" className="carousel-item w-full relative">
+          <img
+            src="https://images.unsplash.com/photo-1521714161819-15534968fc5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            className="w-full"
+          />
+          <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-start items-center  left-0 top-0 ">
+            <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 md:pl-24">
+              <h1 className="text-2xl md:text-5xl font-bold">
+                30% OFF, All Avengers Toy
+              </h1>
+              <p className="">
+                Get your favorite Avengers toys at discounted prices and bring
+                the action-packed adventures of Earth's mightiest heroes to your
+                home.
+              </p>
+
+              <div>
+                <Link to="/allToys" className="btn btn-primary mr-5">
+                  Shop Now
+                </Link>
+                <Link to="/addatoy" className="btn btn-outline btn-secondary">
+                  Sell Your Product
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-center w-full py-2 gap-2">
+        <a href="#item1" className="btn btn-xs hover:btn-accent">
+          1
+        </a>
+        <a href="#item2" className="btn btn-xs hover:btn-accent">
+          2
+        </a>
+        <a href="#item3" className="btn btn-xs hover:btn-accent">
+          3
+        </a>
+        <a href="#item4" className="btn btn-xs hover:btn-accent">
+          4
+        </a>
+      </div>
+    </div>
+  );
 };
 
 export default HeroSlider;
