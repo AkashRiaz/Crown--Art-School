@@ -21,12 +21,10 @@ const MyClass = () => {
             </tr>
           </thead>
           <tbody>
-            {addedClass.map((cls) => (
-             <tr>
+            {addedClass.map((cls, ind) => (
+             <tr key={cls._id}>
              <th>
-               <label>
-                 <input type="checkbox" className="checkbox" />
-               </label>
+               {ind+1}
              </th>
              <th>
              <div className="avatar">

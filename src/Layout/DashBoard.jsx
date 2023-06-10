@@ -2,6 +2,8 @@ import React from "react";
 import {Outlet,Link} from 'react-router-dom'
 
 const DashBoard = () => {
+  const isAdmin = true;
+  const isInstructors = false;
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -19,24 +21,32 @@ const DashBoard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
           {/* Sidebar content here */}
-          <li>
+
+         {
+          isAdmin ? (<>
+            <li>
             <Link to='/dashboard/manageClasses'>Manage Classes</Link>
           </li>
           <li>
             <Link to='/dashboard/manageUsers'>Manage Users</Link>
           </li>
-          <li>
+          </>) :( isInstructors? ( <><li>
             <Link to='addaclass'>Add A Class</Link>
           </li>
           <li>
             <Link to='myclass'>My Class</Link>
-          </li>
-          <li>
+          </li></>) :<>
+             <li>
             <Link to='myenrolledclass'>My Enrolled Class</Link>
           </li>
           <li>
             <Link to='selectedclass'>My Selected Class</Link>
           </li>
+          </>
+         )}
+
+          
+         
           
         </ul>
       </div>

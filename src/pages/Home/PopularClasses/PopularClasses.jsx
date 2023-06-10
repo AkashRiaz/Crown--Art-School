@@ -18,7 +18,7 @@ const PopularClasses = () => {
       <h2 className="text-center my-10 text-4xl font-semibold">Popular Classes</h2>
       <div className="grid grid-col-1 md:grid-cols-3 gap-6 md:ml-10">
         {popularClasses.map((cls) => (
-          <div className="card w-96 bg-base-100 shadow-xl">
+          <div key={cls._id} className="card w-96 bg-base-100 shadow-xl">
             <figure>
               <img src={cls.image} />
             </figure>
