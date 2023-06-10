@@ -2,7 +2,7 @@ import React from "react";
 import {Outlet,Link} from 'react-router-dom'
 
 const DashBoard = () => {
-  const isAdmin = true;
+  const isAdmin = false;
   const isInstructors = false;
   return (
     <div className="drawer lg:drawer-open">
