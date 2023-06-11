@@ -37,11 +37,12 @@ const AllClasses = () => {
   const isAdminOrInstructor = user && ["admin", "instructor"].includes(user.role);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3">
+    <div className="w-full flex justify-center items-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-y-10">
       {allClass.map((singleClass, index) => (
         <div key={index}>
           <div
-            className={`card w-96 ${
+            className={`card w-9/12 h-96 items-start ${
               singleClass.availableSeats === 0 ? "bg-red-500" : "bg-base-100"
             } shadow-xl`}
           >
@@ -82,6 +83,7 @@ const AllClasses = () => {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 };

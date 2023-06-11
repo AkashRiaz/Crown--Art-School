@@ -10,8 +10,8 @@ const HeroSlider = () => {
             src="https://images.unsplash.com/photo-1626278664285-f796b9ee7806?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
             className="w-full"
           />
-          <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-start items-center  left-0 top-0 ">
-            <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 md:pl-24">
+          <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-center items-center  left-0 top-0 right-0 bottom-0">
+            <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 text-center">
               <h1 className="text-2xl md:text-5xl font-bold">
                 20% OFF, All Avengers Toy
               </h1>
@@ -36,8 +36,8 @@ const HeroSlider = () => {
             src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
             className="w-full"
           />
-          <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-start items-center  left-0 top-0 ">
-            <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 md:pl-24">
+          <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-center items-center  left-0 top-0 right-0 bottom-0">
+            <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 text-center mx-auto">
               <h1 className="text-2xl md:text-5xl font-bold">
                 35% OFF, All Star Wars Toy
               </h1>
@@ -62,8 +62,8 @@ const HeroSlider = () => {
             src="https://images.unsplash.com/photo-1598348341635-33a3f4205d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80"
             className="w-full"
           />
-          <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-start items-center  left-0 top-0 ">
-            <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 md:pl-24">
+          <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-center items-center  left-0 top-0 right-0 bottom-0">
+            <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 text-center">
               <h1 className="text-2xl md:text-5xl font-bold">
                 23% OFF, All Transformers Toy
               </h1>
@@ -88,8 +88,8 @@ const HeroSlider = () => {
             src="https://images.unsplash.com/photo-1521714161819-15534968fc5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
             className="w-full"
           />
-          <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-start items-center  left-0 top-0 ">
-            <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 md:pl-24">
+          <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-center items-center  left-0 top-0 right-0 bottom-0 ">
+            <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 text-center">
               <h1 className="text-2xl md:text-5xl font-bold">
                 30% OFF, All Avengers Toy
               </h1>
@@ -112,17 +112,17 @@ const HeroSlider = () => {
         </div>
       </div>
       <div className="flex justify-center w-full py-2 gap-2">
-        <a href="#item1" className="btn btn-xs hover:btn-accent">
-          1
+        <a href="#item1" className="btn btn-xs btn-circle hover:btn-outline">
+          a
         </a>
-        <a href="#item2" className="btn btn-xs hover:btn-accent">
-          2
+        <a href="#item2" className="btn btn-xs btn-circle hover:btn-outline">
+          b
         </a>
-        <a href="#item3" className="btn btn-xs hover:btn-accent">
-          3
+        <a href="#item3" className="btn btn-xs btn-circle hover:btn-outline">
+          c
         </a>
-        <a href="#item4" className="btn btn-xs hover:btn-accent">
-          4
+        <a href="#item4" className="btn btn-xs btn-circle hover:btn-outline">
+          d
         </a>
       </div>
     </div>

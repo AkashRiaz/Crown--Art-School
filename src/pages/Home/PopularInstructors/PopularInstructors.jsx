@@ -19,7 +19,7 @@ const PopularInstructors = () => {
 
   return (
     <div>
-        <h2 className='text-center text-4xl font-semibold my-10'>Popular Instructors</h2>
+        <h2 className='text-center text-4xl font-bold text-orange-600 my-10'>Popular Instructors</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:ml-10">
         {popularInstructors.map(instructor => (
           <div key={instructor.email} className="card w-96 bg-base-100 shadow-xl">

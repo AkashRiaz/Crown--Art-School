@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-// import './Header.css'
+import './NavBar.css'
 import { AuthContext } from "../../providers/AuthProviders";
 // import logo from '../../assets/marvelous-1.png'
 
@@ -14,33 +14,33 @@ const NavBar = () => {
   const navMenu = (
     <div className="md:flex ">
       <li>
-        <Link
+        <NavLink
           to="/"
           className={({ isActive }) => (isActive ? "active" : "")}
         >
           Home
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link to="/instructors" className={({ isActive }) => (isActive ? "active" : "")}>Instructors</Link>
+        <NavLink to="/instructors" className={({ isActive }) => (isActive ? "active" : "")}>Instructors</NavLink>
       </li>
       <li>
-        <Link to="/classes" className={({ isActive }) => (isActive ? "active" : "")}>Classes</Link>
+        <NavLink to="/classes" className={({ isActive }) => (isActive ? "active" : "")}>Classes</NavLink>
       </li>
       {user?.email && (
         <>
           <li>
-            <Link className={({ isActive }) => (isActive ? "active" : "")} to="/dashboard">Dashboard</Link>
+            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/dashboard">Dashboard</NavLink>
           </li>
           <li>
             {" "}
-            <Link className={({ isActive }) => (isActive ? "active" : "")} to="/signup">Sign Up</Link>
+            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/signup">Sign Up</NavLink>
           </li>
         </>
       )}
       {
         user?.email ? ' ': <li>
-        <Link className={({ isActive }) => (isActive ? "active" : "")} to="/signup">Resister</Link>
+        <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/signup">Resister</NavLink>
       </li>
       }
     </div>

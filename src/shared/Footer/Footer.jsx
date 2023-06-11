@@ -1,21 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-base-200 text-base-content">
+   <div className="bg-[#191E24]">
+     <footer className="footer p-10  text-white mt-24">
       <div>
-        <span className="footer-title">Services</span>
-        <a className="link link-hover">Branding</a>
-        <a className="link link-hover">Design</a>
-        <a className="link link-hover">Marketing</a>
-        <a className="link link-hover">Advertisement</a>
+        <h6 className="fw-bold">Get in Touch</h6>
+
+        <p>Address: Magura, Bangladesh</p>
+        <p> Phone: +88 01612264090 </p>
+        <p>Email: akashriaz05@gmail.com</p>
       </div>
       <div>
-        <span className="footer-title">Company</span>
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
+        <span className="footer-title">Others Page</span>
+        <Link to="/classes" className="link link-hover">All Classes</Link>
+        <Link to="/instructors" className="link link-hover">All Instructors</Link>
+        <Link to="/signup" className="link link-hover">Sign Up</Link>
+        <Link to='/login' className="link link-hover">Login</Link>
       </div>
       <div>
         <span className="footer-title">Legal</span>
@@ -27,7 +29,7 @@ const Footer = () => {
         <span className="footer-title">Newsletter</span>
         <div className="form-control w-80">
           <label className="label">
-            <span className="label-text">Enter your email address</span>
+            <span className="text-white">Enter your email address</span>
           </label>
           <div className="relative">
             <input
@@ -41,7 +43,15 @@ const Footer = () => {
           </div>
         </div>
       </div>
+     
     </footer>
+     <div>
+     <div className="border-t-[1px] "></div>
+     <p className="text-white text-center py-5 text-sm">
+       Copyright ©2023 All rights reserved | This template is made with by <span className="link link-hover text-orange-600">Md Akashuzzaman Riaz</span>
+     </p>
+   </div>
+   </div>
   );
 };
 

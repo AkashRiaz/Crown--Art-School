@@ -15,7 +15,7 @@ const PopularClasses = () => {
   const popularClasses = sortedClasses.slice(0, 6);
   return (
     <div>
-      <h2 className="text-center my-10 text-4xl font-semibold">Popular Classes</h2>
+      <h2 className="text-center text-4xl font-bold text-orange-600 my-10">Popular Classes</h2>
       <div className="grid grid-col-1 md:grid-cols-3 gap-6 md:ml-10">
         {popularClasses.map((cls) => (
           <div key={cls._id} className="card w-96 bg-base-100 shadow-xl">

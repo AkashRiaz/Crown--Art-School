@@ -1,0 +1,9 @@
+.home-page.white {
+    background-color: #191E24;
+    color: rgb(0, 0, 0);
+  }
+  
+  .home-page.black {
+    background-color: #E9EEF1;
+    color: #191E24;
+  }
