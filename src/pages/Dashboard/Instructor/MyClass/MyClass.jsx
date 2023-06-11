@@ -34,11 +34,12 @@ const MyClass = () => {
            </div>
              </th>
              <td>
-               {cls.className}
+               {cls.name}
              </td>
              <td>{cls.instructorName}</td>
              <td>{cls.price}</td>
              <td>{cls.availableSeats}</td>
+             <td>{cls.status}</td>
              <th>
                <button className="btn btn-ghost btn-xs">details</button>
              </th>

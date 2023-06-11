@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import './NavBar.css'
 import { AuthContext } from "../../providers/AuthProviders";
-// import logo from '../../assets/marvelous-1.png'
+import logo from '../../assets/logo.png'
+// import useInstructors from "../../hooks/useInstructor";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
+  // const [isInstructors] = useInstructors()
   const handleLogOut = () => {
     logOut()
       .then(() => {})
@@ -22,7 +24,9 @@ const NavBar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/instructors" className={({ isActive }) => (isActive ? "active" : "")}>Instructors</NavLink>
+        
+          <NavLink to="/instructors" className={({ isActive }) => (isActive ? "active" : "")}>Instructors</NavLink>
+        
       </li>
       <li>
         <NavLink to="/classes" className={({ isActive }) => (isActive ? "active" : "")}>Classes</NavLink>
@@ -72,6 +76,9 @@ const NavBar = () => {
             {navMenu}
           </ul>
         </div>
+        <a className="">
+          <img className="w-32 h-10" src={logo} alt="" />
+        </a>
   </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu  px-1">{navMenu}</ul>

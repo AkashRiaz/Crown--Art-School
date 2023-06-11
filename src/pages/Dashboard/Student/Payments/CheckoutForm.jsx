@@ -13,9 +13,9 @@ const CheckoutForm = ({price, className}) => {
     useEffect(() => {
       const fetchClientSecret = async () => {
         try {
-          const response = await fetch("http://localhost:5000/createPayment", {
+          const response = await fetch("http://localhost:5000/create-payment-intent", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: { "content-type": "application/json" },
             body: JSON.stringify(price),
           });
           

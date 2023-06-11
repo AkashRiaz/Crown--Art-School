@@ -20,11 +20,11 @@ const PopularClasses = () => {
         {popularClasses.map((cls) => (
           <div key={cls._id} className="card w-96 bg-base-100 shadow-xl">
             <figure>
-              <img src={cls.image} />
+              <img src={cls.photo} />
             </figure>
             <div className="card-body">
               <h2 className="card-title">Class Name: {cls.name}</h2>
-              <p>Instructor: {cls.instructor}</p>
+              <p>Instructor: {cls.instructorName}</p>
               <p>Available Seats: {cls.availableSeats}</p>
               <p>Price: ${cls.price}</p>
               <div className="card-actions">

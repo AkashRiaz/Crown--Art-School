@@ -7,9 +7,13 @@ import { AiFillEye } from 'react-icons/ai';
 import SocialLogin from "../../shared/SocialLogin/SocialLogin";
 
 const Login = () => {
+  const [error,setError] = useState('')
   const {signIn} = useContext(AuthContext)
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [showPassword, setShowPassword] = useState(false);
+    const location = useLocation();
+  const navigate = useNavigate()
+  const from = location.state?.from?.pathname || '/'
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -18,10 +22,11 @@ const Login = () => {
       signIn(data.email, data.password)
       .then(result =>{
         const user = result.user;
-        console.log(user)
+        navigate(from, {replace:true})
+        setError(' ')
       }).
       catch(error =>{
-            console.log(error.message)
+            setError(error.message)
       })
     }
   return (
@@ -70,7 +75,7 @@ const Login = () => {
             {showPassword ? <AiFillEyeInvisible/> : <AiFillEye/>}
           </span>
         </div>
-        {errors.password && <span className="text-red-600">Password field is required</span>}
+        {errors.password && <span className="text-red-600">Password must be 6 word</span>}
       </div>
             <div className="form-control mt-6">
               <input className="btn btn-primary" type="submit" value="SignIn" />
@@ -80,6 +85,7 @@ const Login = () => {
           </div>
           <div className="text-center mb-5">
             <small>New to this website ? <Link to='/signup' className="text-orange-600 link-hover">Sign Up</Link></small>
+            <p className="text-warning text-xl">{error}</p>
           </div>
           <SocialLogin></SocialLogin>
         </div>

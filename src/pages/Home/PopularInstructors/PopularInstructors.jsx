@@ -11,10 +11,9 @@ const PopularInstructors = () => {
       });
   }, []);
 
-  // Sort the instructors based on the number of students in descending order
   const sortedInstructors = instructors.sort((a, b) => b.number_of_students - a.number_of_students);
 
-  // Get the top six instructors
+  // // Get the top six instructors
   const popularInstructors = sortedInstructors.slice(0, 6);
 
   return (

@@ -14,7 +14,6 @@ const AllClasses = () => {
 
   const handleSelectClass = (singleClass) => {
     if (!user) {
-      // Redirect to the login page if user is not present
       alert("Please log in before selecting the course.");
       return;
     }
@@ -47,7 +46,7 @@ const AllClasses = () => {
             } shadow-xl`}
           >
             <figure>
-              <img src={singleClass.image} alt="Class" />
+              <img src={singleClass.photo} alt="Class" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">

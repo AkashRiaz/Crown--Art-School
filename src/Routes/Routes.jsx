@@ -20,6 +20,7 @@ import Payments from "../pages/Dashboard/Student/Payments/Payments";
 import PrivateRoutes from "./PrivateRoute";
 import AdminRoutes from "./AdminRoutes";
 import InstructorRoute from "./InstructorRoute";
+import FeedBack from "../pages/Dashboard/Admin/ManageClasses/FeedBack";
 
   const router = createBrowserRouter([
     {
@@ -60,6 +61,10 @@ import InstructorRoute from "./InstructorRoute";
         {
           path:'manageUsers',
           element:<AdminRoutes><ManageUsers></ManageUsers></AdminRoutes>
+        },
+        {
+          path:'feedBack',
+          element:<FeedBack></FeedBack>
         },
         {
           path:'addaclass',

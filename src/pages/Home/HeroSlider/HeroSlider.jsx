@@ -7,25 +7,23 @@ const HeroSlider = () => {
       <div className="carousel w-full h-[350px] md:h-[550px] mt-1">
         <div id="item1" className="carousel-item w-full relative">
           <img
-            src="https://images.unsplash.com/photo-1626278664285-f796b9ee7806?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+            src="https://images.pexels.com/photos/8541883/pexels-photo-8541883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             className="w-full"
           />
           <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-center items-center  left-0 top-0 right-0 bottom-0">
             <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 text-center">
               <h1 className="text-2xl md:text-5xl font-bold">
-                20% OFF, All Avengers Toy
+                Unleash Your Creativity at Our Art and Craft School
               </h1>
               <p>
-              Get your favorite Avengers toys at discounted prices and bring the
-        action-packed adventures of Earth's mightiest heroes to your home.
+                Unlock Your Imagination and Explore Endless
+                Possibilities.Nurture Your Creative Spirit and Unleash Your
+                Artistic Potential
               </p>
 
               <div>
-                <Link to="/allToys" className="btn btn-primary mr-5">
-                  Shop Now
-                </Link>
-                <Link to="/addatoy" className="btn btn-outline btn-secondary">
-                  Sell Your Product
+              <Link to="/classes" className="btn btn-outline btn-secondary text-white">
+                  Buy Classes
                 </Link>
               </div>
             </div>
@@ -33,25 +31,23 @@ const HeroSlider = () => {
         </div>
         <div id="item2" className="carousel-item w-full relative">
           <img
-            src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            src="https://images.pexels.com/photos/7605993/pexels-photo-7605993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             className="w-full"
           />
           <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-center items-center  left-0 top-0 right-0 bottom-0">
             <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 text-center mx-auto">
               <h1 className="text-2xl md:text-5xl font-bold">
-                35% OFF, All Star Wars Toy
+                Embrace Your Artistic Journey with Us
               </h1>
               <p>
-              Get your favorite Avengers toys at discounted prices and bring the
-        action-packed adventures of Earth's mightiest heroes to your home.
+                Embark on a Transformative Artistic Voyage and Unleash Your
+                Potential.Immerse Yourself in a World of Art and Let Your
+                Creativity Flourish
               </p>
 
               <div>
-                <Link to="/allToys" className="btn btn-primary mr-5">
-                  Shop Now
-                </Link>
-                <Link to="/addatoy" className="btn btn-outline btn-secondary">
-                  Sell Your Product
+              <Link to="/classes" className="btn btn-outline btn-secondary">
+                  Buy Classes
                 </Link>
               </div>
             </div>
@@ -59,25 +55,23 @@ const HeroSlider = () => {
         </div>
         <div id="item3" className="carousel-item w-full relative">
           <img
-            src="https://images.unsplash.com/photo-1598348341635-33a3f4205d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80"
+            src="https://images.pexels.com/photos/159825/color-pencil-drawing-coloring-colored-pencils-159825.jpeg?auto=compress&cs=tinysrgb&w=600"
             className="w-full"
           />
           <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-center items-center  left-0 top-0 right-0 bottom-0">
             <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 text-center">
               <h1 className="text-2xl md:text-5xl font-bold">
-                23% OFF, All Transformers Toy
+                Explore the Magic of Art and Craft in Our School
               </h1>
               <p>
-              Get your favorite Avengers toys at discounted prices and bring the
-        action-packed adventures of Earth's mightiest heroes to your home.
+                Embrace the Joy of Creating and Unleash Your Artistic Passion.
+                Ignite Your Artistic Journey and Embrace the Beauty of
+                Self-Expression
               </p>
 
               <div>
-                <Link to="/allToys" className="btn btn-primary mr-5">
-                  Shop Now
-                </Link>
-                <Link to="/addatoy" className="btn btn-outline btn-secondary">
-                  Sell Your Product
+                <Link to="/classes" className="btn btn-outline btn-secondary">
+                  Buy Classes
                 </Link>
               </div>
             </div>
@@ -85,26 +79,22 @@ const HeroSlider = () => {
         </div>
         <div id="item4" className="carousel-item w-full relative">
           <img
-            src="https://images.unsplash.com/photo-1521714161819-15534968fc5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+            src="https://images.pexels.com/photos/5063465/pexels-photo-5063465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             className="w-full"
           />
           <div className="absolute h-full rounded-xl bg-gradient-to-r from-[#171717] to-[rgba(19, 19, 19, 0)] flex justify-center items-center  left-0 top-0 right-0 bottom-0 ">
             <div className=" text-white space-y-7 w-full md:w-1/2 pl-2 text-center">
               <h1 className="text-2xl md:text-5xl font-bold">
-                30% OFF, All Avengers Toy
+                Ignite Your Passion for Creativity at Our Art School
               </h1>
               <p className="">
-                Get your favorite Avengers toys at discounted prices and bring
-                the action-packed adventures of Earth's mightiest heroes to your
-                home.
+                Create Beautiful and Inspiring Artworks. Connect with
+                Like-minded Creatives and Collaborate
               </p>
 
               <div>
-                <Link to="/allToys" className="btn btn-primary mr-5">
-                  Shop Now
-                </Link>
-                <Link to="/addatoy" className="btn btn-outline btn-secondary">
-                  Sell Your Product
+              <Link to="/classes" className="btn btn-outline btn-secondary">
+                  Buy Classes
                 </Link>
               </div>
             </div>

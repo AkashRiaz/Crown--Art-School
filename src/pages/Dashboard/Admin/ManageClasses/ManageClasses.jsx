@@ -1,18 +1,37 @@
 import React, { useEffect } from "react";
 import useManageClasses from "../../../../hooks/useManageClasses";
+import { Link } from "react-router-dom";
 
 const ManageClasses = () => {
-  const [totalClass] = useManageClasses();
- 
-    // Function to handle the Approve button click
-    const handleApprove = () => {
-        // Logic to update the status to 'approved' and disable the buttons
-        console.log("this line", totalClass);
+  const [totalClass,refetch] = useManageClasses();
+    const handleApprove = (id) => {
+      fetch(`http://localhost:5000/classes/approved/${id}`,{
+        method:'PATCH'
+      })
+      .then(res=>res.json())
+      
+      .then(data=> {
+        if(data.modifiedCount){
+          console.log(data)
+        }
+        refetch()
+      })
+        console.log(id)
       };
     
       // Function to handle the Deny button click
-      const handleDeny = () => {
-        // Logic to update the status to 'denied' and disable the buttons
+      const handleDeny = (id) => {
+        fetch(`http://localhost:5000/classes/denied/${id}`,{
+        method:'PATCH'
+      })
+      .then(res=>res.json())
+      .then(data=> {
+       
+        if(data.modifiedCount){
+          console.log(data)
+        }
+        refetch()
+      })
       };
     
       // Function to handle the Send Feedback button click
@@ -39,10 +58,11 @@ const ManageClasses = () => {
               <p>Email: {cls?.email}</p>
               <p>availableSeat: {cls.availableSeats}</p>
               <p>Price: {cls.price}</p>
+              <p>Status: {cls.status}</p>
               <div className="card-actions justify-end">
-                <button className="badge badge-outline" onClick={handleApprove}>Approve</button>
-                <button className="badge badge-outline" onClick={handleDeny}>Deny</button>
-                <button className="badge badge-outline" onClick={handleSendFeedback}>FeedBack</button>
+                <button className="badge badge-outline" onClick={()=>handleApprove(cls._id)}>Approve</button>
+                <button className="badge badge-outline" onClick={()=>handleDeny(cls._id)}>Deny</button>
+                <button><Link to='/dashboard/feedBack' className="badge badge-outline">FeedBack</Link></button>
               </div>
             </div>
           </div>)

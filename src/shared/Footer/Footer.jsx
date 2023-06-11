@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from '../../assets/logo.png'
 
 const Footer = () => {
   return (
    <div className="bg-[#191E24]">
      <footer className="footer p-10  text-white mt-24">
       <div>
+        <img src={logo} alt="" />
         <h6 className="fw-bold">Get in Touch</h6>
-
         <p>Address: Magura, Bangladesh</p>
         <p> Phone: +88 01612264090 </p>
         <p>Email: akashriaz05@gmail.com</p>
