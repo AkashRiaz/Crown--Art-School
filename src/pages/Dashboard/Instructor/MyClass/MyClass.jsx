@@ -3,12 +3,12 @@ import useInstructorAddClasses from "../../../../hooks/useInstructorAddClasses";
 
 const MyClass = () => {
   const [addedClass] = useInstructorAddClasses();
+
   return (
     <div>
-      <h2>My Class:{addedClass.length}</h2>
+      <h2>My Class: {addedClass.length}</h2>
       <div className="overflow-x-auto">
         <table className="table">
-          {/* head */}
           <thead>
             <tr>
               <th>#</th>
@@ -17,33 +17,32 @@ const MyClass = () => {
               <th>Instructor</th>
               <th>Price</th>
               <th>Available Seats</th>
+              <th>Status</th>
+              <th>Feedback</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            {addedClass.map((cls, ind) => (
-             <tr key={cls._id}>
-             <th>
-               {ind+1}
-             </th>
-             <th>
-             <div className="avatar">
-             <div className="mask mask-squircle w-12 h-12">
-               <img src={cls.photo} alt="Avatar Tailwind CSS Component" />
-             </div>
-           </div>
-             </th>
-             <td>
-               {cls.name}
-             </td>
-             <td>{cls.instructorName}</td>
-             <td>{cls.price}</td>
-             <td>{cls.availableSeats}</td>
-             <td>{cls.status}</td>
-             <th>
-               <button className="btn btn-ghost btn-xs">details</button>
-             </th>
-           </tr>
+            {addedClass.map((cls, index) => (
+              <tr key={cls._id}>
+                <td>{index + 1}</td>
+                <td>
+                  <div className="avatar">
+                    <div className="mask mask-squircle w-12 h-12">
+                      <img src={cls.photo} alt="Avatar Tailwind CSS Component" />
+                    </div>
+                  </div>
+                </td>
+                <td>{cls.name}</td>
+                <td>{cls.instructorName}</td>
+                <td>{cls.price}</td>
+                <td>{cls.availableSeats}</td>
+                <td>{cls.status}</td>
+                <td>{cls.status === "denied" ? <p>{cls.feedback}</p> : "-"}</td>
+                <td>
+                  <button className="btn btn-ghost btn-xs">Details</button>
+                </td>
+              </tr>
             ))}
           </tbody>
         </table>
