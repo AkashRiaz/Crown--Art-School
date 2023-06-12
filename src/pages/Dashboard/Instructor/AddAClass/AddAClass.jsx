@@ -7,7 +7,7 @@ const AddAClass = () => {
     event.preventDefault();
     const form = event.target;
     const photo = form.photo.value;
-    const className = form.className.value;
+    const name = form.className.value;
     const instructorName = form.instructorName.value;
     const email = form.email.value;
     const strPrice = form.price.value;

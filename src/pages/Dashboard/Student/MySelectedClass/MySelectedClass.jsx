@@ -50,11 +50,7 @@ const MySelectedClass = () => {
                   </td>
                   <td>
                     <Link
-                      to={{
-                        pathname: '/dashboard/payment',
-                        search: `?price=${singleSelectedClass.price}&className=${singleSelectedClass.name}`,
-                      }}
-                      className="btn btn-sm"
+                      to='/dashboard/payment' state={{...singleSelectedClass}}
                     >
                       Pay
                     </Link>

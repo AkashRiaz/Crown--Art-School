@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const PopularClasses = () => {
   const [classesData, setClassesData] = useState([]);
@@ -9,17 +10,14 @@ const PopularClasses = () => {
         setClassesData(data);
       });
   });
-  const sortedClasses = classesData.sort(
-    (a, b) => b.enrolledSeats - a.enrolledSeats
-  );
-  const popularClasses = sortedClasses.slice(0, 6);
+  
   return (
     <div>
       <h2 className="text-center text-4xl font-bold text-orange-600 my-10">Popular Classes</h2>
       <div className="grid grid-col-1 md:grid-cols-3 gap-6 md:ml-10">
-        {popularClasses.map((cls) => (
+        {classesData.slice(0,6).map((cls) => (
           <div key={cls._id} className="card w-96 bg-base-100 shadow-xl">
-            <figure>
+            <figure className="p-3">
               <img src={cls.photo} />
             </figure>
             <div className="card-body">
@@ -27,8 +25,9 @@ const PopularClasses = () => {
               <p>Instructor: {cls.instructorName}</p>
               <p>Available Seats: {cls.availableSeats}</p>
               <p>Price: ${cls.price}</p>
+              <p>Students:{cls.num_student}</p>
               <div className="card-actions">
-                <button className="btn btn-primary">Buy Now</button>
+                <Link to='http://localhost:5173/classes'><button className="btn btn-primary">Book Now</button></Link>
               </div>
             </div>
           </div>

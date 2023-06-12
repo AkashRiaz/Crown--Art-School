@@ -5,19 +5,19 @@ const WhyUs = () => {
     const FeatureData = [
         {
           title: "Quick Learning",
-          desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum molestias, aperiam doloribus aut sapiente praesentium eos iste dicta amet itaque!",
+          desc: "Our innovative teaching methods and interactive resources ensure efficient and effective knowledge acquisition. Experience accelerated learning and achieve your goals faster with our Quick Learning approach.",
           icon: 'ri-macbook-fill',
         },
       
         {
           title: "All Time Support",
-          desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum molestias, aperiam doloribus aut sapiente praesentium eos iste dicta amet itaque!",
+          desc: "Our dedicated team is available around the clock to provide assistance, answer queries, and ensure a smooth learning experience. Count on us for reliable and prompt support, whenever you need it.",
           icon: "ri-discuss-line",
         },
       
         {
           title: "Certification",
-          desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum molestias, aperiam doloribus aut sapiente praesentium eos iste dicta amet itaque!",
+          desc: "Our diverse range of certification enhance their professional skills. Unlock new opportunities and showcase your expertise with our comprehensive certification offerings",
           icon: "ri-contacts-book-line",
         },
       ];
@@ -26,10 +26,8 @@ const WhyUs = () => {
     <div className="py-20 mt-10 bg-white shadow-md md:mx-10 rounded-lg">
       <div className="text-center">
         <h2 className="text-4xl font-bold text-orange-600">About Us</h2>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi
-          cupiditate animi deserunt libero nesciunt corporis explicabo nobis ex
-          quo molestiae!
+        <p className="w-2/3 my-3 mx-auto">
+        Articulates the art school's desired future state or long-term aspirations, expressing its vision for the impact it aims to make in the artistic realm. This subheading may outline the school's vision of producing skilled artists, cultural influencers, or thought leaders who contribute to the broader art world.
         </p>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 text-center mt-10">
@@ -67,7 +65,7 @@ const WhyUs = () => {
       <div className="mb-10 mt-20">
         <div className="grid grid-col-1 md:grid-cols-3">
           {FeatureData.map((item, index) => (
-            <div key={index}>
+            <div key={index} className="border-2 p-6 m-4 rounded-md">
               <div className="single__feature text-center px-4">
                 <h2 className="mb-3">
                   <i className={item.icon}></i>

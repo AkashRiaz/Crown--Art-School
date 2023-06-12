@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import useManageClasses from "../../../../hooks/useManageClasses";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 const ManageClasses = () => {
   const [totalClass,refetch] = useManageClasses();
@@ -34,10 +34,6 @@ const ManageClasses = () => {
       })
       };
     
-      // Function to handle the Send Feedback button click
-      const handleSendFeedback = () => {
-        // Logic to open the modal or navigate to another route for sending feedback
-      };
   return (
     <div>
       <h2>Total Classes:{totalClass.length}</h2>
@@ -46,7 +42,7 @@ const ManageClasses = () => {
             totalClass.map(cls =><div key={cls._id} className="card w-96 bg-base-100 shadow-xl">
             <figure>
               <img
-                src={cls.image}
+                src={cls.photo}
               />
             </figure>
             <div className="card-body">
@@ -54,7 +50,7 @@ const ManageClasses = () => {
                 {cls.name}
                 <div className="badge badge-secondary">Class</div>
               </h2>
-              <p>Instructor: {cls.instructor}</p>
+              <p>Instructor: {cls.instructorName}</p>
               <p>Email: {cls?.email}</p>
               <p>availableSeat: {cls.availableSeats}</p>
               <p>Price: {cls.price}</p>
@@ -62,7 +58,7 @@ const ManageClasses = () => {
               <div className="card-actions justify-end">
                 <button className="badge badge-outline" onClick={()=>handleApprove(cls._id)}>Approve</button>
                 <button className="badge badge-outline" onClick={()=>handleDeny(cls._id)}>Deny</button>
-                <button><Link to='/dashboard/feedBack' className="badge badge-outline">FeedBack</Link></button>
+                <button><Link to='/dashboard/feedBack' state={{...cls}} className="badge badge-outline">FeedBack</Link></button>
               </div>
             </div>
           </div>)

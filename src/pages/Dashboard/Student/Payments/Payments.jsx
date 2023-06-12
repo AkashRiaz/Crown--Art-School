@@ -8,23 +8,15 @@ const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway);
 
 const Payments = () => {
   const location = useLocation();
-  const [price, setPrice] = useState(null);
-  const [className, setClassName] = useState(null);
-
-  useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const priceParam = searchParams.get('price');
-    const classNameParam = searchParams.get('className');
-    setPrice(priceParam);
-    setClassName(classNameParam);
-  }, [location.search]);
-
+  console.log(location)
+  const course = location.state;
   return (
     <div>
-      <h2>Payment: {price}</h2>
-      <h2>Class Name: {className}</h2>
-      <Elements stripe={stripePromise}>
-        <CheckoutForm price={price} className={className} />
+      <h2>Payment: {course.name}</h2>
+      <h2>Class Name: {course.price}</h2>
+    
+            <Elements stripe={stripePromise}>
+        <CheckoutForm course={course} />
       </Elements>
     </div>
   );

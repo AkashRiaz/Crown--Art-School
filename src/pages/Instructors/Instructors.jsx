@@ -11,7 +11,7 @@ const Instructors = () => {
         })
     })
     return (
-        <div className='grid md:grid-cols-3 grid-cols-1'>
+        <div className='grid md:grid-cols-3 grid-cols-1 md:ml-12'>
             {instructors.map((instructor,ind)=> <InstructorCard key={ind} instructor={instructor}></InstructorCard>)}
         </div>
     );

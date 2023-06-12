@@ -36,8 +36,8 @@ const AllClasses = () => {
   const isAdminOrInstructor = user && ["admin", "instructor"].includes(user.role);
 
   return (
-    <div className="w-full flex justify-center items-center">
-      <div className="grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-y-10">
+    <div className="w-full md:ml-14 mt-20">
+      <div className="grid grid-cols-1 md:grid-cols-3  gap-y-10">
       {allClass.map((singleClass, index) => (
         <div key={index}>
           <div
@@ -58,7 +58,7 @@ const AllClasses = () => {
               <p>Instructor: {singleClass.instructorName}</p>
               <p>Available Seats: {singleClass.availableSeats}</p>
               <p>Price: ${singleClass.price}</p>
-              <div className="card-actions justify-end">
+              <div className="card-actions">
                 {!user && <p>Please log in to select the course.</p>}
                 {singleClass.availableSeats > 0 && !isAdminOrInstructor && (
                   <button

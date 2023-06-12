@@ -36,10 +36,6 @@ const NavBar = () => {
           <li>
             <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/dashboard">Dashboard</NavLink>
           </li>
-          <li>
-            {" "}
-            <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/signup">Sign Up</NavLink>
-          </li>
         </>
       )}
       {

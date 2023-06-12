@@ -1,83 +1,84 @@
-import { useStripe ,CardElement,useElements} from '@stripe/react-stripe-js';
-import React,{useState, useEffect, useContext} from 'react';
+import { useStripe, CardElement, useElements } from '@stripe/react-stripe-js';
+import React, { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../../../../providers/AuthProviders';
+import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 
-const CheckoutForm = ({price, className}) => {
-  const [clientSecret, setClientSecret] = useState("");
-  console.log('inside checkout page',price, className)
-    const stripe = useStripe()
-    const element = useElements()
-    const {user} = useContext(AuthContext)
-    const [cardError, setCardError]= useState(' ')
+const CheckoutForm = ({ course }) => {
+  const [clientSecret, setClientSecret] = useState(null);
+  const [cardError, setCardError] = useState('');
+  const stripe = useStripe();
+  const elements = useElements();
+  const { user } = useContext(AuthContext);
+  const {price} = course;
 
-    useEffect(() => {
-      const fetchClientSecret = async () => {
-        try {
-          const response = await fetch("http://localhost:5000/create-payment-intent", {
+  useEffect(() => {
+    const apiKey = import.meta.env.VITE_Payment_Gateway;
+    const accessToken = localStorage.getItem('access-token')
+    fetch("http://localhost:5000/create-payment-intent", {
             method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(price),
-          });
-          
-          if (!response.ok) {
-            throw new Error("Failed to fetch client secret");
-          }
-          
-          const data = await response.json();
-          console.log(data.clientSecret);
-        } catch (error) {
-          console.error("Error fetching client secret:", error);
-        }
-      };
-    
-      fetchClientSecret();
-    }, []);
-    
-  
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${accessToken}`,
+              "Stripe-Account": apiKey,
+            },
+            body: JSON.stringify({price}),
+          })
+          .then(res=> res.json())
+          .then(data=>{
+            console.log(data)
+          })
+        },[])
 
-    const handleSubmit =async(event)=>{
-        event.preventDefault()
+const handleSubmit = async (event) => {
+  event.preventDefault();
 
-        if(!stripe || !element){
-            return;
-        }
-        const card = element.getElement(CardElement)
-        if(card===null){
-            return;
-        }
-        const {error,paymentMethod} = await stripe.createPaymentMethod({
-            type:'card',
-            card
-        })
+  if (!stripe || !elements) {
+      return
+  }
 
-        if(error){
-            setCardError(error.message)
-        }
-        else{
-            setCardError(' ')
-            console.log('payment method', paymentMethod)
-        }
+  const card = elements.getElement(CardElement);
+  if (card === null) {
+      return
+  }
 
-        const {paymentIntent, error:confirmError} = await stripe.confirmCardPayment( clientSecret,
-          {
-            payment_method: {
+  const { error } = await stripe.createPaymentMethod({
+      type: 'card',
+      card
+  })
+
+  if (error) {
+      console.log('error', error)
+      setCardError(error.message);
+  }
+  else {
+      setCardError('');
+      // console.log('payment method', paymentMethod)
+  }
+
+
+  const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
+      clientSecret,
+      {
+          payment_method: {
               card: card,
               billing_details: {
-                email:user?.email || 'Unknown',
-                name: user?.displayName || 'unknown'
+                  email: user?.email || 'unknown',
+                  name: user?.displayName || 'anonymous'
               },
-            },
           },
-        );
-        if(confirmError){
-          setCardError(confirmError)
-        }
+      },
+  );
 
-        console.log(paymentIntent)
-    }
-    return (
-        <>
-        <form onSubmit={handleSubmit} className='w-2/3 mx-auto'>
+  if (confirmError) {
+      console.log(confirmError);
+  }
+  // console.log(paymentIntent)
+
+}
+
+  return (
+    <>
+      <form onSubmit={handleSubmit} className='w-2/3 mx-auto'>
         <CardElement
           options={{
             style: {
@@ -99,8 +100,8 @@ const CheckoutForm = ({price, className}) => {
         </button>
       </form>
       {cardError && <p className='text-red-700'>{cardError}</p>}
-        </>
-    );
+    </>
+  );
 };
 
 export default CheckoutForm;

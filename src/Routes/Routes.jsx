@@ -55,6 +55,18 @@ import FeedBack from "../pages/Dashboard/Admin/ManageClasses/FeedBack";
       element:<PrivateRoutes><DashBoard></DashBoard></PrivateRoutes>,
       children:[
         {
+          path:'myenrolledclass',
+          element:<MyEnrolledClass></MyEnrolledClass>
+        },
+        {
+          path:'selectedclass',
+          element:<MySelectedClass></MySelectedClass>
+        },
+        {
+          path:'payment',
+          element:<Payments></Payments>
+        },
+        {
           path:'manageClasses',
           element:<AdminRoutes><ManageClasses></ManageClasses></AdminRoutes>
         },
@@ -74,18 +86,8 @@ import FeedBack from "../pages/Dashboard/Admin/ManageClasses/FeedBack";
           path:'myclass',
           element:<InstructorRoute><MyClass></MyClass></InstructorRoute>
         },
-        {
-          path:'myenrolledclass',
-          element:<MyEnrolledClass></MyEnrolledClass>
-        },
-        {
-          path:'selectedclass',
-          element:<MySelectedClass></MySelectedClass>
-        },
-        {
-          path:'payment',
-          element:<Payments></Payments>
-        }
+       
+       
       ]
     }
   ])
