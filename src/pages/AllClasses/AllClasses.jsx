@@ -67,6 +67,7 @@ const AllClasses = () => {
                     <div className="badge badge-red">Sold Out</div>
                   )}
                 </h2>
+                <p className="font-bold text-xl">Class: {singleClass.name}</p>
                 <p>Instructor: {singleClass.instructorName}</p>
                 <p>Available Seats: {singleClass.availableSeats}</p>
                 <p>Price: ${singleClass.price}</p>
