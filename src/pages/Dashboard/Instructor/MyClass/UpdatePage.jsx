@@ -2,10 +2,9 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../../../providers/AuthProviders";
 import { useLoaderData } from "react-router-dom";
 
-
 const UpdatePage = () => {
-    const cls = useLoaderData()
-    console.log('class',cls)
+  const cls = useLoaderData();
+  console.log("class", cls);
   const { user } = useContext(AuthContext);
   const handleUpdateClass = (event) => {
     event.preventDefault();
@@ -16,7 +15,7 @@ const UpdatePage = () => {
     const email = form.email.value;
     const strPrice = form.price.value;
     const availableSeats = parseFloat(form.availableSeats.value);
-    const price = parseFloat(strPrice)
+    const price = parseFloat(strPrice);
     const classInfo = {
       photo,
       name,
@@ -24,25 +23,27 @@ const UpdatePage = () => {
       email,
       price,
       availableSeats,
-      status:'pending',
-      feedback:'No Feedback'
+      status: "pending",
+      feedback: "No Feedback",
     };
-     
-    fetch(`http://localhost:5000/classes/${cls?._id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(classInfo),
-    })
+
+    fetch(
+      `https://summer-camp-server-side-akashriaz.vercel.app/classes/${cls?._id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(classInfo),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
-        if(data.modifiedCount){
-            alert('updated')
-            form.reset();
+        if (data.modifiedCount) {
+          alert("updated");
+          form.reset();
         }
       });
-      
   };
 
   return (
@@ -118,7 +119,7 @@ const UpdatePage = () => {
               className="mt-1 p-4 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
             />
           </div>
-           
+
           <div>
             <label
               htmlFor="price"

@@ -3,16 +3,19 @@ import React from "react";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const ManageUsers = () => {
-    const [axiosSecure] = useAxiosSecure()
+  const [axiosSecure] = useAxiosSecure();
   const { data: users = [], refetch } = useQuery(["users"], async () => {
     const res = await axiosSecure.get("/users");
     return res.data;
   });
 
   const handleMakeAdmin = (id) => {
-    fetch(`http://localhost:5000/users/admin/${id}`, {
-      method: "PATCH"
-    })
+    fetch(
+      `https://summer-camp-server-side-akashriaz.vercel.app/users/admin/${id}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json)
       .then((data) => {
         if (data.modifiedCount) {
@@ -24,9 +27,12 @@ const ManageUsers = () => {
   };
 
   const handleMakeInstructor = (id) => {
-    fetch(`http://localhost:5000/users/instructors/${id}`, {
-      method: "PATCH"
-    })
+    fetch(
+      `https://summer-camp-server-side-akashriaz.vercel.app/users/instructors/${id}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json)
       .then((data) => {
         if (data.modifiedCount) {
@@ -38,15 +44,15 @@ const ManageUsers = () => {
 
   return (
     <div>
-      <h2 className="text-center text-3xl font-bold my-5">Manage Users: {users.length}</h2>
+      <h2 className="text-center text-3xl font-bold my-5">
+        Manage Users: {users.length}
+      </h2>
       <div>
         <div className="overflow-x-auto">
           <table className="table">
             <thead>
               <tr>
-                <th>
-                  #
-                </th>
+                <th>#</th>
                 <th>Image</th>
                 <th>Name</th>
                 <th>Email</th>
@@ -61,7 +67,10 @@ const ManageUsers = () => {
                   <th>
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
-                        <img src={user.photo} alt="Avatar Tailwind CSS Component" />
+                        <img
+                          src={user.photo}
+                          alt="Avatar Tailwind CSS Component"
+                        />
                       </div>
                     </div>
                   </th>
@@ -73,7 +82,9 @@ const ManageUsers = () => {
                       <button
                         className="btn btn-ghost btn-xs bg-orange-800 text-white"
                         onClick={() => handleMakeAdmin(user._id)}
-                        disabled={user.role === "admin" || user.role === "instructors"}
+                        disabled={
+                          user.role === "admin" || user.role === "instructors"
+                        }
                       >
                         Make Admin
                       </button>
@@ -82,7 +93,9 @@ const ManageUsers = () => {
                       <button
                         onClick={() => handleMakeInstructor(user._id)}
                         className="btn btn-ghost btn-xs bg-orange-600 text-white"
-                        disabled={user.role === "admin" || user.role === "instructors"}
+                        disabled={
+                          user.role === "admin" || user.role === "instructors"
+                        }
                       >
                         Make Instructor
                       </button>

@@ -1,7 +1,7 @@
 import React from "react";
-import { useRouteError } from "react-router-dom";
+import { Link, useRouteError } from "react-router-dom";
 import "./ErrorPage.css";
-
+import {BsFillArrowLeftCircleFill} from 'react-icons/bs'
 const ErrorPage = () => {
     const error = useRouteError();
     return (
@@ -16,6 +16,7 @@ const ErrorPage = () => {
                 <p>
                   <i>Page {error.statusText || error.message}!!</i>
                 </p>
+                <Link to='/'><button className="btn mt-10"><BsFillArrowLeftCircleFill></BsFillArrowLeftCircleFill> Back to Home</button></Link>
               </div>
             </div>
           </div>

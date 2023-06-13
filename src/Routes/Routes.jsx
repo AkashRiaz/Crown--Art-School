@@ -1,7 +1,4 @@
-import {
-    createBrowserRouter,
-    RouterProvider,
-  } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "../Layout/Main";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
@@ -23,77 +20,100 @@ import InstructorRoute from "./InstructorRoute";
 import FeedBack from "../pages/Dashboard/Admin/ManageClasses/FeedBack";
 import UpdatePage from "../pages/Dashboard/Instructor/MyClass/UpdatePage";
 
-  const router = createBrowserRouter([
-    {
-        path:'/',
-        element:<Main></Main>,
-        errorElement:<ErrorPage></ErrorPage>,
-        children:[
-          {
-             path:'/',
-             element:<Home></Home>
-          },
-          {
-           path:'instructors',
-           element:<Instructors></Instructors>
-          },
-          {
-             path:'classes',
-             element:<AllClasses></AllClasses>
-          },
-            {
-                path:'login',
-                element:<Login></Login>
-            },
-            {
-              path:'signup',
-              element:<SignUp></SignUp>
-            }
-        ]
-    },
-    {
-      path:'dashboard',
-      element:<PrivateRoutes><DashBoard></DashBoard></PrivateRoutes>,
-      children:[
-        {
-          path:'myenrolledclass',
-          element:<MyEnrolledClass></MyEnrolledClass>
-        },
-        {
-          path:'selectedclass',
-          element:<MySelectedClass></MySelectedClass>
-        },
-        {
-          path:'payment',
-          element:<Payments></Payments>
-        },
-        {
-          path:'manageClasses',
-          element:<AdminRoutes><ManageClasses></ManageClasses></AdminRoutes>
-        },
-        {
-          path:'manageUsers',
-          element:<AdminRoutes><ManageUsers></ManageUsers></AdminRoutes>
-        },
-        {
-          path:'feedBack',
-          element:<FeedBack></FeedBack>
-        },
-        {
-          path:'addaclass',
-          element:<InstructorRoute><AddAClass></AddAClass></InstructorRoute>
-        },
-        {
-          path:'myclass',
-          element:<InstructorRoute><MyClass></MyClass></InstructorRoute>
-        },
-        {
-          path:'updated/:id',
-          element:<UpdatePage></UpdatePage>,
-          loader:({params})=>fetch(`http://localhost:5000/class/${params.id}`)
-        }
-      ]
-    }
-  ])
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "instructors",
+        element: <Instructors></Instructors>,
+      },
+      {
+        path: "classes",
+        element: <AllClasses></AllClasses>,
+      },
+      {
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "signup",
+        element: <SignUp></SignUp>,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoutes>
+        <DashBoard></DashBoard>
+      </PrivateRoutes>
+    ),
+    children: [
+      {
+        path: "myenrolledclass",
+        element: <MyEnrolledClass></MyEnrolledClass>,
+      },
+      {
+        path: "selectedclass",
+        element: <MySelectedClass></MySelectedClass>,
+      },
+      {
+        path: "payment",
+        element: <Payments></Payments>,
+      },
+      {
+        path: "manageClasses",
+        element: (
+          <AdminRoutes>
+            <ManageClasses></ManageClasses>
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "manageUsers",
+        element: (
+          <AdminRoutes>
+            <ManageUsers></ManageUsers>
+          </AdminRoutes>
+        ),
+      },
+      {
+        path: "feedBack",
+        element: <FeedBack></FeedBack>,
+      },
+      {
+        path: "addaclass",
+        element: (
+          <InstructorRoute>
+            <AddAClass></AddAClass>
+          </InstructorRoute>
+        ),
+      },
+      {
+        path: "myclass",
+        element: (
+          <InstructorRoute>
+            <MyClass></MyClass>
+          </InstructorRoute>
+        ),
+      },
+      {
+        path: "updated/:id",
+        element: <UpdatePage></UpdatePage>,
+        loader: ({ params }) =>
+          fetch(
+            `https://summer-camp-server-side-akashriaz.vercel.app/class/${params.id}`
+          ),
+      },
+    ],
+  },
+]);
 
-  export default router;
+export default router;

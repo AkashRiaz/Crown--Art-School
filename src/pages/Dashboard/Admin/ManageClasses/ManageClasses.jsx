@@ -18,9 +18,12 @@ const ManageClasses = () => {
   }, [disabledClasses]);
 
   const handleApprove = (id) => {
-    fetch(`http://localhost:5000/classes/approved/${id}`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://summer-camp-server-side-akashriaz.vercel.app/classes/approved/${id}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {
@@ -32,9 +35,12 @@ const ManageClasses = () => {
   };
 
   const handleDeny = (id) => {
-    fetch(`http://localhost:5000/classes/denied/${id}`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://summer-camp-server-side-akashriaz.vercel.app/classes/denied/${id}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {
@@ -47,7 +53,9 @@ const ManageClasses = () => {
 
   return (
     <div>
-      <h2 className="text-center text-3xl font-bold my-5">Total Classes: {totalClass.length}</h2>
+      <h2 className="text-center text-3xl font-bold my-5">
+        Total Classes: {totalClass.length}
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 md:ml-20 gap-10">
         {totalClass.map((cls) => (
           <div key={cls._id} className="card w-96 bg-base-100 shadow-xl">
@@ -68,14 +76,22 @@ const ManageClasses = () => {
                 <button
                   className="badge badge-outline btn"
                   onClick={() => handleApprove(cls._id)}
-                  disabled={disabledClasses.includes(cls._id) || cls.status === "approved" || cls.status === "denied"}
+                  disabled={
+                    disabledClasses.includes(cls._id) ||
+                    cls.status === "approved" ||
+                    cls.status === "denied"
+                  }
                 >
                   Approve
                 </button>
                 <button
                   className="badge badge-outline btn"
                   onClick={() => handleDeny(cls._id)}
-                  disabled={disabledClasses.includes(cls._id) || cls.status === "approved" || cls.status === "denied"}
+                  disabled={
+                    disabledClasses.includes(cls._id) ||
+                    cls.status === "approved" ||
+                    cls.status === "denied"
+                  }
                 >
                   Deny
                 </button>

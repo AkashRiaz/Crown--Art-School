@@ -1,25 +1,30 @@
-import React from 'react';
-import useSelectedClass from '../../../../hooks/useSelectedClass';
-import { Link } from 'react-router-dom';
+import React from "react";
+import useSelectedClass from "../../../../hooks/useSelectedClass";
+import { Link } from "react-router-dom";
 
 const MySelectedClass = () => {
   const [selectedClass, refetch] = useSelectedClass();
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/selectedClass/${id}`, {
-      method: 'DELETE',
-    })
+    fetch(
+      `https://summer-camp-server-side-akashriaz.vercel.app/selectedClass/${id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
           refetch();
-          alert('delete successfully');
+          alert("delete successfully");
         }
       });
-  }
+  };
   console.log(selectedClass);
   return (
     <div>
-      <h2 className='text-center my-5 font-semibold text-3xl'>My Selected Class: {selectedClass.length}</h2>
+      <h2 className="text-center my-5 font-semibold text-3xl">
+        My Selected Class: {selectedClass.length}
+      </h2>
       <div>
         <div className="overflow-x-auto">
           <table className="table table-zebra">
@@ -50,8 +55,9 @@ const MySelectedClass = () => {
                   </td>
                   <td>
                     <Link
-                      to='/dashboard/payment' state={{...singleSelectedClass}}
-                      className='btn btn-primary'
+                      to="/dashboard/payment"
+                      state={{ ...singleSelectedClass }}
+                      className="btn btn-primary"
                     >
                       Pay
                     </Link>

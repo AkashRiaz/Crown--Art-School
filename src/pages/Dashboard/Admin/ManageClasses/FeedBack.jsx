@@ -12,19 +12,22 @@ const FeedBack = () => {
     const feedback = form.feedback.value;
     console.log(feedback);
     if (classes) {
-      fetch(`http://localhost:5000/classes/feedback/${classes?._id}`, {
-        method: "PATCH",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ feedback }),
-      })
+      fetch(
+        `https://summer-camp-server-side-akashriaz.vercel.app/classes/feedback/${classes?._id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({ feedback }),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
         });
     }
-    form.reset(' ')
+    form.reset(" ");
   };
 
   return (

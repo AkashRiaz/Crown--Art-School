@@ -34,13 +34,16 @@ const SignUp = () => {
               email: data.email,
               photo: data.photoURL,
             };
-            fetch("http://localhost:5000/users", {
-              method: "POST",
-              headers: {
-                "content-type": "application/json",
-              },
-              body: JSON.stringify(saveUser),
-            })
+            fetch(
+              "https://summer-camp-server-side-akashriaz.vercel.app/users",
+              {
+                method: "POST",
+                headers: {
+                  "content-type": "application/json",
+                },
+                body: JSON.stringify(saveUser),
+              }
+            )
               .then((res) => res.json())
               .then((data) => {
                 if (data.insertedId) {
@@ -65,12 +68,14 @@ const SignUp = () => {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center w-1/2 lg:text-left">
-            
-           <img src="https://cdn.svgator.com/images/2021/08/SVG-engages-users.png" alt="" />
+            <img
+              src="https://cdn.svgator.com/images/2021/08/SVG-engages-users.png"
+              alt=""
+            />
           </div>
           <div className="card w-1/2 max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-            <h1 className="text-3xl font-bold text-center">Sign Up now!</h1>
+              <h1 className="text-3xl font-bold text-center">Sign Up now!</h1>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>

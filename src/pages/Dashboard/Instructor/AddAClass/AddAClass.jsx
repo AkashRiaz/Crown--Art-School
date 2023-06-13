@@ -12,7 +12,7 @@ const AddAClass = () => {
     const email = form.email.value;
     const strPrice = form.price.value;
     const availableSeats = parseFloat(form.availableSeats.value);
-    const price = parseFloat(strPrice)
+    const price = parseFloat(strPrice);
     const classInfo = {
       photo,
       name,
@@ -20,11 +20,11 @@ const AddAClass = () => {
       email,
       price,
       availableSeats,
-      status:'pending',
-      feedback:'No Feedback'
+      status: "pending",
+      feedback: "No Feedback",
     };
-     
-    fetch(`http://localhost:5000/classes`, {
+
+    fetch(`https://summer-camp-server-side-akashriaz.vercel.app/classes`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -33,7 +33,7 @@ const AddAClass = () => {
     })
       .then((res) => res.json())
       .then((data) => {});
-      form.reset();
+    form.reset();
   };
 
   return (
@@ -107,7 +107,7 @@ const AddAClass = () => {
               className="mt-1 p-4 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
             />
           </div>
-           
+
           <div>
             <label
               htmlFor="price"
@@ -139,7 +139,11 @@ const AddAClass = () => {
             />
           </div>
         </div>
-        <input className="btn btn-block mt-7" type="submit" value="Add A Class" />
+        <input
+          className="btn btn-block mt-7"
+          type="submit"
+          value="Add A Class"
+        />
       </form>
     </div>
   );

@@ -7,7 +7,7 @@ import {AiOutlineLogout} from 'react-icons/ai'
 import {AiOutlineHome} from 'react-icons/ai'
 import {GrUserManager} from 'react-icons/gr'
 import {SiGoogleclassroom} from 'react-icons/si'
-import {GrCheckboxSelected} from 'react-icons/gr'
+import {FaShoppingCart} from 'react-icons/fa'
 import {AiOutlineAppstoreAdd} from 'react-icons/ai'
 import {MdSubject} from 'react-icons/md'
 import {MdOutlineBookmarkAdded} from 'react-icons/md'
@@ -60,7 +60,7 @@ const DashBoard = () => {
                 <Link to="myenrolledclass"><MdOutlineBookmarkAdded></MdOutlineBookmarkAdded>Enrolled Class</Link>
               </li>
               <li className="font-bold text-[17px] hover:text-orange-600">
-                <Link to="selectedclass"><GrCheckboxSelected></GrCheckboxSelected>Selected Class</Link>
+                <Link to="selectedclass"><FaShoppingCart></FaShoppingCart>Selected Class</Link>
               </li>
             </>
           )}

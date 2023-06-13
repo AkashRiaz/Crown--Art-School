@@ -34,14 +34,14 @@ const MyClass = () => {
                     </div>
                   </div>
                 </td>
-                <td>{cls.name}</td>
+                <td className="text-bold">{cls.name}</td>
                 <td>{cls.instructorName}</td>
-                <td>{cls.price}</td>
+                <td>${cls.price}</td>
                 <td>{cls.availableSeats}</td>
-                <td>{cls.status}</td>
+                <td className="text-red-600">{cls.status}</td>
                 <td>{cls.status === "denied" ? <p>{cls.feedback}</p> : "-"}</td>
                 <td>
-                  <Link to={`/dashboard/updated/${cls._id}`}><button className="btn btn-ghost btn-xs">Update</button></Link>
+                  <Link to={`/dashboard/updated/${cls._id}`}><button className="btn btn-primary">Update</button></Link>
                 </td>
               </tr>
             ))}
