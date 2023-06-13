@@ -53,7 +53,7 @@ const AllClasses = () => {
         {approvedClasses.map((singleClass, index) => (
           <div key={index}>
             <div
-              className={`card w-9/12 h-96 items-start ${
+              className={`card w-9/12 h-[490px] items-start ${
                 singleClass.availableSeats === 0 ? "bg-red-500" : "bg-base-100"
               } shadow-xl`}
             >
