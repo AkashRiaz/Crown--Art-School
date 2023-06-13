@@ -19,18 +19,18 @@ const MySelectedClass = () => {
   console.log(selectedClass);
   return (
     <div>
-      <h2>My Selected Class: {selectedClass.length}</h2>
+      <h2 className='text-center my-5 font-semibold text-3xl'>My Selected Class: {selectedClass.length}</h2>
       <div>
         <div className="overflow-x-auto">
           <table className="table table-zebra">
             {/* head */}
             <thead>
               <tr>
-                <th></th>
+                <th>#</th>
                 <th>Class Name</th>
-                <th>Job</th>
-                <th>Favorite Color</th>
-                <th>Favorite Color</th>
+                <th>Price</th>
+                <th>Delete</th>
+                <th>Pay</th>
               </tr>
             </thead>
             <tbody>
@@ -39,7 +39,7 @@ const MySelectedClass = () => {
                 <tr key={singleSelectedClass._id}>
                   <th>{ind + 1}</th>
                   <th>{singleSelectedClass.name}</th>
-                  <th>{singleSelectedClass.price}</th>
+                  <th>${singleSelectedClass.price}</th>
                   <td>
                     <button
                       className="btn btn-sm btn-warning"
@@ -51,6 +51,7 @@ const MySelectedClass = () => {
                   <td>
                     <Link
                       to='/dashboard/payment' state={{...singleSelectedClass}}
+                      className='btn btn-primary'
                     >
                       Pay
                     </Link>

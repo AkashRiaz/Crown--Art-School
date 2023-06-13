@@ -19,6 +19,7 @@ const DashBoard = () => {
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content ">
+        <h2 className="text-center text-4xl mb-4 text-orange-600">Welcome to Dashboard</h2>
         <Outlet></Outlet>
         <label
           htmlFor="my-drawer-2"

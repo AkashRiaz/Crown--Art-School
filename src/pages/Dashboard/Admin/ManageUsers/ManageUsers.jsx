@@ -38,21 +38,20 @@ const ManageUsers = () => {
 
   return (
     <div>
-      <h2>Manage Users: {users.length}</h2>
+      <h2 className="text-center text-3xl font-bold my-5">Manage Users: {users.length}</h2>
       <div>
         <div className="overflow-x-auto">
           <table className="table">
             <thead>
               <tr>
                 <th>
-                  <label>
-                    <input type="checkbox" className="checkbox" />
-                  </label>
+                  #
                 </th>
+                <th>Image</th>
                 <th>Name</th>
-                <th>Job</th>
-                <th>Favorite Color</th>
-                <th></th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>

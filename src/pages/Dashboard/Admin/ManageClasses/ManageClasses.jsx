@@ -47,8 +47,8 @@ const ManageClasses = () => {
 
   return (
     <div>
-      <h2>Total Classes: {totalClass.length}</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <h2 className="text-center text-3xl font-bold my-5">Total Classes: {totalClass.length}</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 md:ml-20 gap-10">
         {totalClass.map((cls) => (
           <div key={cls._id} className="card w-96 bg-base-100 shadow-xl">
             <figure>

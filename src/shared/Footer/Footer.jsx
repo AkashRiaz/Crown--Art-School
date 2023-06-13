@@ -7,7 +7,7 @@ const Footer = () => {
    <div className="bg-[#191E24]">
      <footer className="footer p-10  text-white mt-24">
       <div>
-        <img src={logo} alt="" />
+        <img className="h-12 w-40" src={logo} alt="" />
         <h6 className="fw-bold">Get in Touch</h6>
         <p>Address: Magura, Bangladesh</p>
         <p> Phone: +88 01612264090 </p>

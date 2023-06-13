@@ -4,30 +4,23 @@ import { AuthContext } from '../../../../providers/AuthProviders';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 
 const CheckoutForm = ({ course }) => {
-  const [clientSecret, setClientSecret] = useState(null);
+  const [clientSecret, setClientSecret] = useState("");
   const [cardError, setCardError] = useState('');
   const stripe = useStripe();
   const elements = useElements();
   const { user } = useContext(AuthContext);
+  const [axiosSecure] = useAxiosSecure();
   const {price} = course;
 
   useEffect(() => {
-    const apiKey = import.meta.env.VITE_Payment_Gateway;
-    const accessToken = localStorage.getItem('access-token')
-    fetch("http://localhost:5000/create-payment-intent", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": `Bearer ${accessToken}`,
-              "Stripe-Account": apiKey,
-            },
-            body: JSON.stringify({price}),
-          })
-          .then(res=> res.json())
-          .then(data=>{
-            console.log(data)
-          })
-        },[])
+    if (price > 0) {
+        axiosSecure.post('/create-payment-intent', { price })
+            .then(res => {
+                console.log(res.data.clientSecret)
+                setClientSecret(res.data.clientSecret);
+            })
+    }
+}, [price, axiosSecure])
 
 const handleSubmit = async (event) => {
   event.preventDefault();
@@ -55,6 +48,7 @@ const handleSubmit = async (event) => {
       // console.log('payment method', paymentMethod)
   }
 
+  setProcessing(true)
 
   const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
       clientSecret,
@@ -72,7 +66,8 @@ const handleSubmit = async (event) => {
   if (confirmError) {
       console.log(confirmError);
   }
-  // console.log(paymentIntent)
+
+
 
 }
 

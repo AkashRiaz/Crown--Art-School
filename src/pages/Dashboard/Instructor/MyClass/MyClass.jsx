@@ -1,5 +1,6 @@
 import React from "react";
 import useInstructorAddClasses from "../../../../hooks/useInstructorAddClasses";
+import { Link } from "react-router-dom";
 
 const MyClass = () => {
   const [addedClass] = useInstructorAddClasses();
@@ -40,7 +41,7 @@ const MyClass = () => {
                 <td>{cls.status}</td>
                 <td>{cls.status === "denied" ? <p>{cls.feedback}</p> : "-"}</td>
                 <td>
-                  <button className="btn btn-ghost btn-xs">Details</button>
+                  <Link to={`/dashboard/updated/${cls._id}`}><button className="btn btn-ghost btn-xs">Update</button></Link>
                 </td>
               </tr>
             ))}
